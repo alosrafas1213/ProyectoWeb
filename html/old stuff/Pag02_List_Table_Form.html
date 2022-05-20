@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>List, Tabla, Form</title>
+<script>
+// Codigo de Javascript
+function mostrarDatos()
+ { // alert("Mostrando Valores de campos del Formulario");
+  alert("nombre= "  + document.f1.prodId.value);
+  alert("nombre1= " + document.getElementById("prodId").value);
+  alert("nombre2= " + document.forms[0].prodId.value);
+  alert("nombre3= " + document.forms[0].elements[0].value);
+  
+  alert("Masc= " + document.f1.Genero.checked);
+  alert("Masc1= " + document.getElementById("masc").checked);
+  alert("Fem  = " + document.getElementById("fem").checked);
+
+  alert("Regalo    = " + document.getElementById("regalo").checked);
+  alert("EntDomic  = " + document.getElementById("entDomic").checked);
+
+  inx = document.getElementById("colorP").selectedIndex
+  alert("ColorPos = " + inx)
+  alert("ColorName= " + document.getElementById("colorP").options[inx].value)
+ }
+
+function cambiaImagen()
+  { document.getElementById("imagen1").src = "cachorros-leon.jpg"  
+  }
+function restauraImagen()
+  { document.getElementById("imagen1").src = "Safari-Africa.jpg"  
+  }
+// Tarea definir cambios de imagen con una sola funcion con el jpg como parámetro 
+// Tarea Carrusel de imagenes  Avance   Retroceso 
+  
+</script>
+</head>
+
+<!-- Imagen de sustitucion, Rollover image -->
+<img id=imagen1  name=imgen1 src="Safari-Africa.jpg" 
+   onMouseOver= "cambiaImagen()" onMouseOut="restauraImagen()"> 
+
+<body>
+<h1>Datos del Producto</h1>
+<form id=f1 name=f1 method=get action=codigo.php>   
+<!-- get muestra los datos enviados; post no los muestra -->
+<!-- <fieldset>
+<legend>Datos del Producto<legend> -->
+<label>Id del Producto</label>
+<input type=text  id=prodId name=prodId> <br>
+<label usuario>
+<input type=radio id=masc name=Genero />Masc &nbsp; &nbsp; &nbsp;            
+<input type=radio id=fem  name=Genero />Fem <br>
+<input type=checkbox id=regalo name=regalo/>Regalo
+<input type=checkbox id=entDomic name=entDomic/>Entrega a Domicilio <br>
+Elige Color
+<select id=colorP name=colorP>
+<optgroup label=B/W>
+  <option>negro</option> 
+  <option>blanco</option> 
+</optgroup>
+<optgroup label=Colores>
+  <option>amarillo</option>
+  <option>azul</option> 
+</optgroup>
+
+</select> <br>
+Elige zona de entrega 
+<input list="zonas" id=zona name="zonas">
+<datalist id=zonas name=zonas>
+<option value="norte">
+<option value="sur">
+<option value="oriente">
+<option value="poniente">
+</datalist><br>
+Comentarios<br>
+<textarea>...
+</textarea> <br>
+
+<input type=reset id=reset name=reset value="Borrar">&nbsp; &nbsp;
+<input type=button id=validar name=validar value="mostrarDatos" onClick="mostrarDatos(); " >
+<input type=submit id=enviar name=enviar value="Enviar">
+
+
+
+<!-- /fieldset -->
+</form>
+
+
+
+
+<ol>
+ <li>Bebidas</li>
+    <ul>
+	  <li>Agua de Limon</li>
+	  <li>Agua de Horchata</li>
+    </ul>
+ <li>Postres</li>
+   <ul>
+	  <li>Helado Napolitano</li>
+	  <li>Pie de Queso</li>
+    </ul>
+</ol>
+
+
+<table border=1 cellpadding=20px cellspacing=10px>
+<caption>Ticket de Compra</caption>
+<tr><th>producto</th><th>precio</th> </tr>
+<tr><td>Tortillas</td><td>18</td></tr>
+<tr><td>Salsas</td><td>14</td></tr>
+<tr><td>Huevo</td><td>35</td></tr>
+<tfoot bgcolor=yellow><td>Total</td><td>67</td></tfoot>
+</table>
+</body>
+</html>
