@@ -31,202 +31,19 @@
 
 
      <script>
+
+        function httpGet(theUrl)
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.send( null );
+            return JSON.parse(xmlHttp.response);   
+        }
+
         window.onload = function () {
             // Variables
            
-            let baseDeDatos = [
-                {
-                    id: 1,
-                    nombre: 'Ajedrez clásico',
-                    precio: 459.99,
-                    descripcion:'Juego de ajedrez de madera.',
-                    imagen: 'ProyectoWEBImages/Ajedrez.jpg'
-                },
-                {
-                    id: 2,
-                    nombre: 'Catan expansion completa',
-                    precio: 44.97,
-                    descripcion:'a',
-                    imagen: 'ProyectoWEBImages/Catan.jpg'
-                },
-                {
-                    id: 3,
-                    nombre: 'Catan',
-                    precio: 46.50,
-                    descripcion:'c',
-                    imagen: 'ProyectoWEBImages/Catan1.jpg'
-                },
-                {
-                    id: 4,
-                    nombre: 'Catan',
-                    precio: 17,
-                    descripcion:'',
-                    imagen: 'ProyectoWEBImages/Catan2.jpeg'
-                },
-                {
-                    id: 5,
-                    nombre: 'Conecta Cuatro',
-                    precio: 44.97,
-                    descripcion:'Cuaderno de cuadro chico de 90 Hojas.',
-                    imagen: 'ProyectoWEBImages/ConectaCuatro.jpg'
-                },
-                {
-                    id: 6,
-                    nombre: 'Conecta cuatro',
-                    precio: 2312.00,
-                    descripcion:'Estuche con  60 pastillas de acuarela profesional con colores vibrantes.',
-                    imagen: 'ProyectoWEBImages/ConectaCuatro1.jpg'
-                },
-                {
-                    id: 7,
-                    nombre: 'Conecta cuatro',
-                    precio: 44.97,
-                    descripcion:'Cuaderno de 39X27 cm con 24 hojas.',
-                    imagen: 'ProyectoWEBImages/ConectaCuatro2.jpg'
-                },
-                {
-                    id: 8,
-                    nombre: 'EC',
-                    precio: 46.50,
-                    descripcion:'Lápiz de color profesional de alta calidad con forma voluminosa del lápiz es suave en la muñeca incluso después de largos períodos de uso.',
-                    imagen: 'ProyectoWEBImages/EC.jpg'
-                },
-                {
-                    id: 9,
-                    nombre: 'Pinceles profesionales',
-                    precio: 438.90,
-                    descripcion:'Estuche de pinceles de nylon con virola de aluminio. Este estuche posee varios tipos de punta. Numeración: 1,  2,  3, 4,  5,  6,  8 ,9 y 10.',
-                    imagen: 'ProyectoWEBImages/EC1.jpg'
-                },
-                {
-                    id: 10,
-                    nombre: 'Godete',
-                    precio: 70.97,
-                    descripcion:'Godete desechable de plástico circular con tapa transparente, adecuado para preparar, diluir y mezclar colores.',
-                    imagen: 'ProyectoWEBImages/EC2.jpg'
-                },
-                {
-                    id: 11,
-                    nombre: 'Rotuladores de colores marca Marc ',
-                    precio: 572.18,
-                    descripcion:'Paquete de 60 rotuladores de colores de excelente calidad.',
-                    imagen: 'ProyectoWEBImages/Monopoli.jpg'
-                },
-                {
-                    id: 12,
-                    nombre: 'GUBIAS SPEEDBALL 4131 Intercambiables',
-                    precio: 780,
-                    descripcion:'Este conjunto de herramientas de linóleo contiene un mango de lino y cortadores de linóleo 1, 2, 3, 5, 6.',
-                    imagen: 'ProyectoWEBImages/Monopoli1.jpg'
-                },
-                {
-                    id: 13,
-                    nombre: 'Colores pastel REMBRANDT',
-                    precio: 5190,
-                    descripcion:'Set de iniciación Rembrandt contiene 15 pasteles suaves de excelente desprendimiento del color. ',
-                    imagen: 'ProyectoWEBImages/Risk.jpg'
-                },
-                {
-                    id: 14,
-                    nombre: 'Pegamento con brillantina american crafts',
-                    precio: 126,
-                    descripcion:'Botella de 4.23 fl oz de esmalte dimensional con una punta fina para detalles intrincados. Libre de ácido.',
-                    imagen: 'ProyectoWEBImages/Risk1.jpg'
-                },
-                {
-                    id: 15,
-                    nombre: 'Engrapadora de golpe bostitch ',
-                    precio: 539.20,
-                    descripcion:'Engrapadora de golpe para uso pesado con grapas de 1/4.',
-                    imagen: 'ProyectoWEBImages/Risk2.jpg'
-                },
-                {
-                    id: 16,
-                    nombre: 'Jumbo Slim Art Deco ',
-                    precio: 399,
-                    descripcion:'Libro de arte decó con los  máximos representantes de este movimiento.',
-                    imagen: 'ProyectoWEBImages/Scrabble.jpg'
-                },
-                {
-                    id: 17,
-                    nombre: 'Mochila yadatex dragon ball super Goku',
-                    precio: 649,
-                    descripcion:'Mochila escolar de Dragon Ball ',
-                    imagen: 'ProyectoWEBImages/Scrabble1.jpg'
-                },
-                {
-                    id: 18,
-                    nombre: 'Libreta moleskine dragon ball Goku',
-                    precio: 535.20,
-                    descripcion:'Libreta de raya edición Limitada Dragon Ball Goku Tapa dura.',
-                    imagen: 'ProyectoWEBImages/Scrabble2.jpg'
-                },
-                {
-                    id: 19,
-                    nombre: 'Bata escolar articolor para laboratorio grande',
-                    precio: 259,
-                    descripcion:'Bata para estudiantes. Son ideales para las prácticas de química y física.',
-                    imagen: 'ProyectoWEBImages/SevenWonders.jpg'
-                },
-                {
-                    id: 20,
-                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
-                    precio: 2599.0,
-                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
-                    imagen: 'ProyectoWEBImages/SevenWonders1.png'
-                },
-                {
-                    id: 21,
-                    nombre: 'Block 30x30cm unico con 33 hojas',
-                    precio: 201,
-                    descripcion:'Hojas con diversos colores y patrones.',
-                    imagen: 'ProyectoWEBImages/SevenWonders2.jpg'
-                },
-                {
-                    id: 22,
-                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
-                    precio: 2599.0,
-                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
-                    imagen: 'ProyectoWEBImages/TTB.jpg'
-                },
-                {
-                    id: 23,
-                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
-                    precio: 2599.0,
-                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
-                    imagen: 'ProyectoWEBImages/TTB1.jpeg'
-                },
-                {
-                    id: 24,
-                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
-                    precio: 2599.0,
-                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
-                    imagen: 'ProyectoWEBImages/TTB2.jpg'
-                },
-                {
-                    id: 25,
-                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
-                    precio: 2599.0,
-                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
-                    imagen: 'ProyectoWEBImages/UNO_Logo.png'
-                },
-                {
-                    id: 26,
-                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
-                    precio: 2599.0,
-                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
-                    imagen: 'ProyectoWEBImages/UNO.jpg'
-                },
-                {
-                    id: 27,
-                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
-                    precio: 2599.0,
-                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
-                    imagen: 'ProyectoWEBImages/UNO1.jpg'
-                },
-
-
-            ];
+            let baseDeDatos = httpGet("http://143.198.128.240/index.php/product/list");
             
            
             let $escolar = document.querySelector('#escolar');
@@ -256,7 +73,7 @@
                     // Imagen
                     let miNodoImagen = document.createElement('img');
                     miNodoImagen.classList.add('img-fluid');
-                    miNodoImagen.setAttribute('src', info['imagen']);
+                    miNodoImagen.setAttribute('src', info['foto']);
                     // Precio
                     let miNodoPrecio = document.createElement('p');
                     miNodoPrecio.classList.add('card-text');
@@ -264,7 +81,7 @@
                     //descripcion
                     let miNodoDescripcion = document.createElement('p');
                     miNodoDescripcion.classList.add('card-text');
-                    miNodoDescripcion.textContent = info['descripcion'] ;
+                    miNodoDescripcion.textContent = info['descripcionJuego'] ;
                     // Boton 
                     let miNodoBoton = document.createElement('button');
                     miNodoBoton.classList.add('btn', 'btn-primary','display-4');
