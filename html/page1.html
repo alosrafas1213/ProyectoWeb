@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.5.0, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="images/JuegosDinamitaV2.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/300px-68-olympic-emblem-166x144.png" type="image/x-icon">
   <meta name="description" content="Web Page Generator Description">
   
   
@@ -27,23 +27,162 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-
-
-
      <script>
-
-        function httpGet(theUrl)
-        {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-            xmlHttp.send( null );
-            return JSON.parse(xmlHttp.response);   
-        }
-
         window.onload = function () {
             // Variables
            
-            let baseDeDatos = httpGet("http://143.198.128.240/index.php/product/list");
+            let baseDeDatos = [
+                {
+                    id: 1,
+                    nombre: 'Paquete pluma y lápices Bic',
+                    precio: 46.50,
+                    descripcion:'Pluma de tinta negra y punto mediano. En un empaque con 4 lápices del número 2.',
+                    imagen: 'assets/images/17875-515x515.png'
+                },
+                {
+                    id: 2,
+                    nombre: 'Cuaderno Profesional (cuadro chico)',
+                    precio: 44.97,
+                    descripcion:'Cuaderno de cuadro chico de 90 Hojas.',
+                    imagen: 'assets/images/1-500x500.jpg'
+                },
+                {
+                    id: 3,
+                    nombre: 'Lápiz Bic',
+                    precio: 46.50,
+                    descripcion:'Lápiz clásico turquesa del número 2. En un empaque de 8 piezas(Incluye sacapuntas básico).',
+                    imagen: 'assets/images/2-676x676.jpg'
+                },
+                {
+                    id: 4,
+                    nombre: 'Goma de Migajón PELIKAN STRIKE ',
+                    precio: 17,
+                    descripcion:'-Goma rectangular en un empaque de 2 Piezas.',
+                    imagen: 'assets/images/1-3-1046x1046.png'
+                },
+                {
+                    id: 5,
+                    nombre: 'Cuaderno Profesional (cuadro grande) ',
+                    precio: 44.97,
+                    descripcion:'Cuaderno de cuadro chico de 90 Hojas.',
+                    imagen: 'assets/images/1-500x500.jpg'
+                },
+                {
+                    id: 6,
+                    nombre: 'Acuarela',
+                    precio: 2312.00,
+                    descripcion:'Estuche con  60 pastillas de acuarela profesional con colores vibrantes.',
+                    imagen: 'assets/images/3-500x500.jpg'
+                },
+                {
+                    id: 7,
+                    nombre: 'Cuaderno de dibujo',
+                    precio: 44.97,
+                    descripcion:'Cuaderno de 39X27 cm con 24 hojas.',
+                    imagen: 'assets/images/4-500x500.jpg'
+                },
+                {
+                    id: 8,
+                    nombre: 'Lápices de colores',
+                    precio: 46.50,
+                    descripcion:'Lápiz de color profesional de alta calidad con forma voluminosa del lápiz es suave en la muñeca incluso después de largos períodos de uso.',
+                    imagen: 'assets/images/estuche-lapices-polychromos-676x301.jpg'
+                },
+                {
+                    id: 9,
+                    nombre: 'Pinceles profesionales',
+                    precio: 438.90,
+                    descripcion:'Estuche de pinceles de nylon con virola de aluminio. Este estuche posee varios tipos de punta. Numeración: 1,  2,  3, 4,  5,  6,  8 ,9 y 10.',
+                    imagen: 'assets/images/218590-500x500.jpg'
+                },
+                {
+                    id: 10,
+                    nombre: 'Godete',
+                    precio: 70.97,
+                    descripcion:'Godete desechable de plástico circular con tapa transparente, adecuado para preparar, diluir y mezclar colores.',
+                    imagen: 'assets/images/436-500x500.jpg'
+                },
+                {
+                    id: 11,
+                    nombre: 'Rotuladores de colores marca Marc ',
+                    precio: 572.18,
+                    descripcion:'Paquete de 60 rotuladores de colores de excelente calidad.',
+                    imagen: 'assets/images/rotulador.jpg'
+                },
+                {
+                    id: 12,
+                    nombre: 'GUBIAS SPEEDBALL 4131 Intercambiables',
+                    precio: 780,
+                    descripcion:'Este conjunto de herramientas de linóleo contiene un mango de lino y cortadores de linóleo 1, 2, 3, 5, 6.',
+                    imagen: 'assets/images/372.jpg'
+                },
+                {
+                    id: 13,
+                    nombre: 'Colores pastel REMBRANDT',
+                    precio: 5190,
+                    descripcion:'Set de iniciación Rembrandt contiene 15 pasteles suaves de excelente desprendimiento del color. ',
+                    imagen: 'assets/images/pasteles.jpg'
+                },
+                {
+                    id: 14,
+                    nombre: 'Pegamento con brillantina american crafts',
+                    precio: 126,
+                    descripcion:'Botella de 4.23 fl oz de esmalte dimensional con una punta fina para detalles intrincados. Libre de ácido.',
+                    imagen: 'assets/images/pega.jpg'
+                },
+                {
+                    id: 15,
+                    nombre: 'Engrapadora de golpe bostitch ',
+                    precio: 539.20,
+                    descripcion:'Engrapadora de golpe para uso pesado con grapas de 1/4.',
+                    imagen: 'assets/images/engrapadora.jpg'
+                },
+                {
+                    id: 16,
+                    nombre: 'Jumbo Slim Art Deco ',
+                    precio: 399,
+                    descripcion:'Libro de arte decó con los  máximos representantes de este movimiento.',
+                    imagen: 'assets/images/libro.jpg'
+                },
+                {
+                    id: 17,
+                    nombre: 'Mochila yadatex dragon ball super Goku',
+                    precio: 649,
+                    descripcion:'Mochila escolar de Dragon Ball ',
+                    imagen: 'assets/images/goku.jpg'
+                },
+                {
+                    id: 18,
+                    nombre: 'Libreta moleskine dragon ball Goku',
+                    precio: 535.20,
+                    descripcion:'Libreta de raya edición Limitada Dragon Ball Goku Tapa dura.',
+                    imagen: 'assets/images/goku2.jpg'
+                },
+                {
+                    id: 19,
+                    nombre: 'Bata escolar articolor para laboratorio grande',
+                    precio: 259,
+                    descripcion:'Bata para estudiantes. Son ideales para las prácticas de química y física.',
+                    imagen: 'assets/images/bata.jpg'
+                },
+                {
+                    id: 20,
+                    nombre: 'Diadema primus phs-250 arcus 7.1 ch',
+                    precio: 2599.0,
+                    descripcion:'Diadema ideal para jugar partidas de LOL u otros juegos en línea.',
+                    imagen: 'assets/images/diadema.jpg'
+                },
+                {
+                    id: 21,
+                    nombre: 'Block 30x30cm unico con 33 hojas',
+                    precio: 201,
+                    descripcion:'Hojas con diversos colores y patrones.',
+                    imagen: 'assets/images/hojas.jpg'
+                }
+
+
+
+            ];
             
            
             let $escolar = document.querySelector('#escolar');
@@ -73,7 +212,7 @@
                     // Imagen
                     let miNodoImagen = document.createElement('img');
                     miNodoImagen.classList.add('img-fluid');
-                    miNodoImagen.setAttribute('src', info['foto']);
+                    miNodoImagen.setAttribute('src', info['imagen']);
                     // Precio
                     let miNodoPrecio = document.createElement('p');
                     miNodoPrecio.classList.add('card-text');
@@ -81,7 +220,7 @@
                     //descripcion
                     let miNodoDescripcion = document.createElement('p');
                     miNodoDescripcion.classList.add('card-text');
-                    miNodoDescripcion.textContent = info['descripcionJuego'] ;
+                    miNodoDescripcion.textContent = info['descripcion'] ;
                     // Boton 
                     let miNodoBoton = document.createElement('button');
                     miNodoBoton.classList.add('btn', 'btn-primary','display-4');
@@ -230,10 +369,10 @@
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="index.html">
-                         <img src="images/JuegosDinamitaV2.png" alt="Mobirise" title="" style="height: 4rem;">
+                         <img src="assets/images/300px-68-olympic-emblem-166x144.png" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-1" href="index.html">Juegos Dinamita</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-1" href="index.html">México 68</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -290,9 +429,7 @@
 <section class="mbr-section form1 cid-skCyDAfyaU" id="form1-15">
 
     
-    <div>
-        <br> 
-    </div>
+
     
     <div class="container">
         <div class="row justify-content-center">

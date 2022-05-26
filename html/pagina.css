@@ -1,0 +1,112 @@
+html{
+    font-size: 15px;
+  }
+  
+  body{
+    font-family:Arial, Helvetica, sans-serif; /*EB Garamond;*/
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: #ADADAD;
+    text-align: justify;
+    color: silver;
+    margin: 0;
+  }
+  
+  h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+  
+  #image{
+    max-width: 70%;
+    display: block;
+    height: auto;
+    margin: 0;
+    border-radius: 20PX;
+  }
+
+  .img-fluid{
+    max-width: 90%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20PX;
+  }
+
+  .card-text{
+    max-width: 50%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  #img-div {
+    background: #C2CAD0;
+    padding: 10px;
+    max-width: 60%;
+    margin: auto;
+    border-radius: 20PX;
+  }
+  
+  #img-caption{
+    margin-top: 10px;
+  }
+  
+  #main{
+    background: #444444;
+    padding: 10px;
+    max-width: 96%;
+    margin: auto;
+    border-radius: 20PX;
+  }
+
+  #juegos{
+    padding: 10px;
+    max-width: 80%;
+    margin: auto;
+    border-radius: 20PX;
+  }
+
+  .table{
+      font-weight: normal;
+      color: silver;
+      min-height: 300px;
+      width: 95%;
+      background: #333;
+      margin: auto;
+      align-items: center;
+      border-radius: 20PX;
+      border:1px solid #ADADAD;}
+
+/*.table:nth-child(odd){
+  background-color:black;
+}*/
+  
+
+  .wrappler {
+    margin: auto;
+    max-width: 100%;
+    /*padding-bottom: 14em;*/
+    vertical-align: middle;
+  }
+
+
+  
+  li{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    text-align: left;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+
+    li{
+      margin-left: 0px;
+      }
+    body{
+      font-size: 1rem;
+    }
+    
+    
+  }
