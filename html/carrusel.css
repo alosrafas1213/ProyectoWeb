@@ -1,43 +1,78 @@
-* {
-    margin: 0; 
+*{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-body { 
-    min-height: 100vh;
-    background-image: linear-gradient(-45deg, #e3ddd9 50%, #36221c 50%);
-    font-family: 'Raleway', sans-serif;
+body{
+    width: 100%;
+    max-width: 1450px;
+    height: 100vh;
+    padding: 40px;
+    background-image: linear-gradient(rgba(5,7,12,0.75),url());
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.titulo {
-    font-size: 40px;
-    font-family: 'Dancing Script', cursive;
-    margin-bottom: 40px;
-    color: #fff;
+.container{
+    width: 50%;
+    position: relative;
 }
 
-.subtitulo {
-    margin: 0;
-    color: #000;
-    display: inline;
-    font-size: 50px;
-    font-weight: 500;
-    text-transform: uppercase;
+.mySlides{
+    display: none;
 }
 
-.sabor { 
-    color: #fff;
-    margin: 7px 0;
-    font-size: 50px;
-    font-weight: 600;
-    text-shadow: 2px 2px 1px rgba(0,0,0,0.7);
-    font-family: 'Dancing Script', cursive;
-    margin-top: 0;
+.mySlides img{
+    width: 100%;
 }
 
-.linea-division {
-    width: 80%;
-    height: 2px;
-    background-color: #36221c;
+.prev,
+.next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6 ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    border: solid #fff 2px;
+}
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev{
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover{
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.elements{
+    text-align: center;
+}
+.quadrate{
+    cursor: pointer;
+    height: 4px;
+    width: 50px;
+    margin: 0 2px;
+    background-color: #717171;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    border-radius: 2px;
+}
+
+.active, .quadrate:hover{
+    background-color: #fff;
 }

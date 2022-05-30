@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="registro.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" type="text/css" href="pagina.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Caompatible" content="ie=edge">
+        <link rel="shortcut icon" href="images/JuegosDinamita.png" type="image/x-icon">
+        <title>Juegos Dinamita</title>
+
+        <script src="navbarcreation.js" type="text/javascript" defer></script>
+    </head>
+
+    <body>
+        <header-component></header-component>
+
+        <br>
+        <br>
+
+        <iframe width="560" height="315" style="width: 40%; height: 460px; align-items: center; display:block; margin: 0 auto;" src="https://www.youtube.com/embed/4IyXWp3uofk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="about-section">
+        <br>
+        <h1>Más cerca de conseguir los juegos que quieres.</h1>
+        <p>Crea una cuenta con nosotros.</p>
+        <br>
+    </div>
+    <br>
+    
+    <div class="formulario">
+    <form  name="agreeform" id="agreeform" action="index.php/client/list" method="post">
+        <label for="fname">Nombre</label>
+        <input type="text" id="fname" name="firstname" placeholder="Tu nombre...">
+    
+        <label for="lname">Apellido Paterno</label>
+        <input type="text" id="lname" name="Parentlastname" placeholder="Apellido Paterno...">
+
+        <label for="lname">Apellido Materno</label>
+        <input type="text" id="lname" name="Motherlastname" placeholder="Apellido Materno...">
+
+        <label for="lname">CURP</label>
+        <input type="text" id="lname" name="CURP" placeholder="CURP...">
+
+        <label for="lname">Correo Electrónico</label>
+        <input type="text" id="lname" name="email" placeholder="example@correo.com">
+
+        <br>
+        <p> Género:
+            <label><input type="radio" name="genero" value="M"> Masculino</label>
+            <label><input type="radio" name="genero" value="F"> Femenino</label>
+            <label><input type="radio" name="genero" value="H"> Helicóptero Apache</label>
+        </p>
+    
+        <br>
+
+        <label for="lname">Número Telefónico</label>
+        <input type="text" id="lname" name="telefono" placeholder="Telefono Celular">
+
+        <label for="lname">Dirección:</label>
+        <input type="text" id="calle" name="calle" placeholder="Calle">
+        <input type="text" id="numero" name="numero" placeholder="Número">
+        <input type="text" id="colonia" name="colonia" placeholder="Colonia">
+        <input type="text" id="cp" name="cp" placeholder="Codigo Postal">
+
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado">
+            <option value="CMDX">CDMX</option>
+            <option value="Cancún">Cancún</option>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="Monterrey">Monterrey</option>
+        </select>
+
+        
+
+        <p><label><input type="checkbox" name="novedades"> Me gustaría recibir novedades en mi correo</label></p>
+        
+        <input type="submit"  value="Submit"></a>
+    </form>
+    </div>
+
+    <section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;">
+        <a style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+        <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Derechos reservados - 
+            <a href="https://www.youtube.com/watch?v=UYBI_tVxvGY" style="color:#aaa;">Juegos Dinamita</a>
+        </p>
+    </section>
+
+    </body> 
+
+</html>

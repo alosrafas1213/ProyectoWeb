@@ -13,50 +13,54 @@ function httpGet(theUrl)
 }
 
 function renderItems(baseDeDatos) {
-    let $juegos = document.querySelector('#juegos');
-    for (let info of baseDeDatos) {
-        // Estructura
-        let miNodo = document.createElement('div');
-        miNodo.classList.add('card', 'col-sm-4');
-        // Body
-        let miNodoCardBody = document.createElement('div');
-        miNodoCardBody.classList.add('card-body');
-        // Titulo
-        let miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
-        miNodoTitle.textContent = info['nombre'];
-        // Imagen
-        let miNodoImagen = document.createElement('img');
-        miNodoImagen.classList.add('img-fluid');
-        miNodoImagen.setAttribute('src', info['foto']);
-        // Precio
-        let miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = '$' + info['precio'] + ' pesos mexicanos';
-        //descripcion
-        let miNodoDescripcion = document.createElement('p');
-        miNodoDescripcion.classList.add('card-text');
-        miNodoDescripcion.textContent = info['descripcionJuego'] ;
+        let $juegos = document.querySelector('#juegos');
+        var col = [];
+        for (var i = 0; i < baseDeDatos.length; i++) {
+            for (var key in baseDeDatos[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
 
-        console.log(info['descripcionJuego']);
-        console.log("hola prro");
-        // Boton 
-        //let miNodoBoton = document.createElement('button');
-        //miNodoBoton.classList.add('btn', 'btn-primary','display-4');
-        //miNodoBoton.textContent = 'Añadir a carrito';
-        //miNodoBoton.setAttribute('marcador', info['id']);
-        //miNodoBoton.addEventListener('click', anyadirCarrito);
-        // Insertamos
-        miNodoCardBody.appendChild(miNodoImagen);
-        miNodoCardBody.appendChild(miNodoTitle);
-        miNodoCardBody.appendChild(miNodoDescripcion);
+        var table = document.createElement("table");
+        table.classList.add('table');
 
-        miNodoCardBody.appendChild(miNodoPrecio);
-        //miNodoCardBody.appendChild(miNodoBoton);
-        miNodo.appendChild(miNodoCardBody);
-        miNodoCardBody.classList.add('card-wrapper');
-        $juegos.appendChild(miNodo);
-    }
+
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < baseDeDatos.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                    let cell = "<div class='wrappler'> <div class='inner'>" + baseDeDatos[i][col[j]];
+                    console.log(cell);
+                    tabCell.innerHTML = cell;
+                    j++;
+                if (j<4)
+                    tabCell.innerHTML = "<div class='wrappler'> <div class='inner'>" + baseDeDatos[i][col[j]];
+                else{
+                    let image = "<img class='img-fluid' src='" + baseDeDatos[i][col[4]] + "'>";
+                    tabCell.innerHTML = image;
+                    console.log(image)
+                }
+            }
+            var tabCell = tr.insertCell(-1);
+            let cell1 = '<p><label><input type="checkbox" name='+baseDeDatos[i][col[0]]+'> Agregar</label></p>';
+            tabCell.innerHTML = cell1;
+            var tabCell = tr.insertCell(-1);
+            let cell2 = '<p></p><label><input name=c'+baseDeDatos[i][col[0]]+' type="number" min="1" max="99" step="1" value="1">Numero de productos</label></p>';
+            tabCell.innerHTML = cell2;
+        
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("juegos");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    
     return $juegos;
 }
 
@@ -74,7 +78,7 @@ class Productos extends HTMLElement {
   
   }
   
-  customElements.define('header-component', Productos);
+customElements.define('header-component', Productos);
 
 function onLoad() {  
     var productos = new Productos();

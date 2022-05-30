@@ -1,4 +1,4 @@
-var array= ["./images/board-games.png","./images/board-games1.jpeg","./images/FMed.jpg","./images/fi.jpg","./images/board-games.png"];
+var array= ["./images/board-games.png","./images/board-games1.jpeg","./images/board-games2.jpg","./images/board-games3.jfif","./images/board-games4.jpg","images/Oferton.png","./images/comming_soon.png", "https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/HasanElias/phpC1p3gn.gif","https://s3.amazonaws.com/theoatmeal-img/ek-app/steal.gif "];
 var cont=0;
 
 function siguiente()

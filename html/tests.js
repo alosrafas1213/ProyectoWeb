@@ -13,7 +13,6 @@ function httpGet(theUrl)
 }
 
 function renderItems(baseDeDatos) {
-    /*
     let $juegos = document.querySelector('#juegos');
     for (let info of baseDeDatos) {
         // Estructura
@@ -57,45 +56,7 @@ function renderItems(baseDeDatos) {
         miNodo.appendChild(miNodoCardBody);
         miNodoCardBody.classList.add('card-wrapper');
         $juegos.appendChild(miNodo);
-        }
-        */
-        let $juegos = document.querySelector('#juegos');
-        var col = [];
-        for (var i = 0; i < baseDeDatos.length; i++) {
-            for (var key in baseDeDatos[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
-            }
-        }
-
-        var table = document.createElement("table");
-        table.classList.add('table');
-
-
-
-        // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < baseDeDatos.length; i++) {
-
-            tr = table.insertRow(-1);
-
-            for (var j = 1; j < col.length; j++) {
-                var tabCell = tr.insertCell(-1);
-                if (j<4)
-                    tabCell.innerHTML = "<div class='wrappler'> <div class='inner'>" + baseDeDatos[i][col[j]];
-                else{
-                    let image = "<img class='img-fluid' src='" + baseDeDatos[i][col[4]] + "'>";
-                    tabCell.innerHTML = image;
-                    console.log(image)
-                }
-            }
-        }
-
-        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("juegos");
-        divContainer.innerHTML = "";
-        divContainer.appendChild(table);
-    
+    }
     return $juegos;
 }
 
@@ -113,7 +74,7 @@ class Productos extends HTMLElement {
   
   }
   
-customElements.define('header-component', Productos);
+  customElements.define('header-component', Productos);
 
 function onLoad() {  
     var productos = new Productos();

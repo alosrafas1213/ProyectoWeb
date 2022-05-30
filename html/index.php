@@ -4,14 +4,23 @@ require __DIR__ . "/inc/bootstrap.php";
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = explode( '/', $uri );
  
-if ((isset($uri[2]) && $uri[2] != 'product') || !isset($uri[3])) {
+if ((isset($uri[2]) && $uri[2] != 'product' && $uri[2] != 'client' && $uri[2] != 'venta') || !isset($uri[3])) {
     header("HTTP/1.1 404 Not Found");
     exit();
 }
- 
+
 require PROJECT_ROOT_PATH . "/Controller/Api/ProductController.php";
- 
-$objFeedController = new ProductController();
+require PROJECT_ROOT_PATH . "/Controller/Api/ClientController.php";
+require PROJECT_ROOT_PATH . "/Controller/Api/VentaController.php";
+
+if ($uri[2] == 'product')
+    $objFeedController = new ProductController();
+if ($uri[2] == 'client')
+    $objFeedController = new ClientController();
+if ($uri[2] == 'venta')
+    $objFeedController = new VentaController();
+
 $strMethodName = $uri[3] . 'Action';
 $objFeedController->{$strMethodName}();
+
 ?>

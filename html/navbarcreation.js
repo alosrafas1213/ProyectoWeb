@@ -16,11 +16,10 @@ headerTemplate.innerHTML = `
       </button>
       <div id="navbar-menu" aria-labelledby="navbar-toggle">
         <ul class="navbar-links">
-          <li class="navbar-item"><a class="navbar-link" href="/about">Conocenos</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/conocenos.html">Conocenos</a></li>
           <li class="navbar-item"><a class="navbar-link" href="/productos.html">Productos</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/careers">Carrito</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/contact">Registro</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/contact">Cuenta</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/registro.html">Registro</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/cuenta.html">Cuenta</a></li>
         </ul>
       </div>
     </nav>

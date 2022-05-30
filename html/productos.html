@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="navbar.css">
 <link rel="stylesheet" href="pagina.css">
+<link rel="stylesheet" href="productos.css">
 <header id="navbar">
     <nav class="navbar-container container">
       <a href="/" class="home-link">
@@ -14,11 +15,10 @@
       </button>
       <div id="navbar-menu" aria-labelledby="navbar-toggle">
         <ul class="navbar-links">
-          <li class="navbar-item"><a class="navbar-link" href="/about">Conocenos</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/conocenos.html">Conocenos</a></li>
           <li class="navbar-item"><a class="navbar-link" href="/productos.html">Productos</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/careers">Carrito</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/contact">Registro</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/contact">Cuenta</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/registro.html">Registro</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/cuenta.html">Cuenta</a></li>
         </ul>
       </div>
     </nav>
@@ -26,9 +26,24 @@
   </header>
   <script type="text/javascript" src="productos.js" defer></script>
   <body>
-        <br>
-        <br>
+    <br><br>
         <div id="main">
-          <header-component id="juegos"></header-component>
+
+          <form  name="agreeform" id="agreeform" action="index.php/venta/list" method="post">
+            <header-component id="juegos"></header-component>
+
+            <br>
+            <!--label for="lname">CURP</label-->
+            <input type="text" id="lname" name="CURP" placeholder="Ingrese su CURP para completar la venta.">
+
+            <input type="submit"  value="Submit"></a>
+          </form>
         </div>
+
+        <section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;">
+          <a style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+          <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Derechos reservados - 
+              <a href="https://pbs.twimg.com/media/E97T_qsUYAEwoGk.jpg" style="color:#aaa;">Juegos Dinamita</a>
+          </p>
+      </section>
 </body>

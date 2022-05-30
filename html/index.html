@@ -2,7 +2,7 @@
 <html>
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" type="text/css" href="pagina.css">
-  <link rel="stylesheet" type="text/css" href="carrusel.css">
+  <!--link rel="stylesheet" type="text/css" href="carrusel.css"-->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
   <script type="text/javascript" src="carrusel.js"></script>
 
@@ -14,21 +14,41 @@
     <title>Juegos Dinamita</title>
 
     <script src="navbarcreation.js" type="text/javascript" defer></script>
+    <script type="text/javascript" src="navbar.js"></script>
   </head>
   <body onload="loadd()">
     <header-component></header-component>
     <main id="main">
-      <script type="text/javascript" src="navbar.js"></script>
+      
       <br>
       <br>
       <h1 id="title"> Juegos Dinamita </h1>  
       <figure id="img-div">
-        <img id="image" src="./images/FC.jpg" />
+        <img id="image" src="./images/board-games.png.jpg" />
       </figure>
       <div>
+        <div class='lol' style="align-items: center; display:block; margin: 0 auto; padding-left: 45%;">
         <button id="anterior" onclick="anterior()">Imagen anterior</button>
         <button id="siguiente" onclick="siguiente()">Siguiente imagen</button>
+        </div>
       </div>
+
+      <br>
+      <br>
+
+      <iframe id="chess" style="width: 40%; height: 460px; align-items: center; display:block; margin: 0 auto;" src="https://www.chess.com/daily_puzzle" frameborder="0"></iframe>
+
     </main>
+
+
+
+    
+
+    <section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;">
+      <a style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+      <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Derechos reservados - 
+          <a href="https://www.youtube.com/watch?v=u3IHCd6U-J8&ab_channel=Derth" style="color:#aaa;">Juegos Dinamita</a>
+      </p>
+  </section>
   </body>
 </html>

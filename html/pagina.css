@@ -7,7 +7,6 @@ html{
     font-size: 1.6rem;
     line-height: 1.5;
     background-color: #ADADAD;
-    text-align: justify;
     color: silver;
     margin: 0;
   }
@@ -68,14 +67,15 @@ html{
 
   .table{
       font-weight: normal;
-      color: silver;
+      color: black;
       min-height: 300px;
-      width: 95%;
-      background: #333;
+      width: 97%;
+      background: lightgray;
       margin: auto;
       align-items: center;
       border-radius: 20PX;
-      border:1px solid #ADADAD;}
+      border:1px solid #ADADAD;
+    }
 
 /*.table:nth-child(odd){
   background-color:black;
